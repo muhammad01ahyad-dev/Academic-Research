@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic Research Hub — research progress, lecture notes, papers, research scope, and activities.">
+  <title>Academic Research Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">AR</div>
+        <div>
+          <strong>Academic Research</strong>
+          <span>Research Hub</span>
+        </div>
+      </div>
+
+      <nav id="mainNav">
+        <a href="#home" class="nav-link active" data-page="home">⌂ <span>Overview</span></a>
+        <a href="#progress" class="nav-link" data-page="progress">◷ <span>Daily Progress</span></a>
+        <a href="#notes" class="nav-link" data-page="notes">✎ <span>Lecture Notes</span></a>
+        <a href="#papers" class="nav-link" data-page="papers">▤ <span>My Papers</span></a>
+        <a href="#scope" class="nav-link" data-page="scope">◇ <span>Research Scope</span></a>
+        <a href="#activity" class="nav-link" data-page="activity">↗ <span>Activities</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button id="exportBtn" class="outline-btn">Export research data</button>
+        <small>Static site · GitHub Pages ready</small>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <button id="menuBtn" class="icon-btn" aria-label="Open menu">☰</button>
+        <div class="breadcrumb">ACADEMIC / <span id="pageLabel">OVERVIEW</span></div>
+        <div class="top-actions">
+          <button id="themeBtn" class="icon-btn" title="Toggle theme">◐</button>
+          <a class="github-btn" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </header>
+
+      <section id="home" class="page active-page">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">RESEARCH NOTEBOOK</p>
+            <h1>Think. Model. Compute.<br><em>Discover.</em></h1>
+            <p class="hero-text">A personal academic workspace for documenting research progress, theoretical ideas, lecture notes, publications, and scientific activities.</p>
+            <div class="hero-actions">
+              <a href="#progress" class="primary-btn">+ Add today's progress</a>
+              <a href="#papers" class="secondary-btn">View publications</a>
+            </div>
+          </div>
+          <div class="hero-card">
+            <span>RESEARCH STATUS</span>
+            <strong id="heroStatus">Active</strong>
+            <div class="status-line"><i></i> Research notebook online</div>
+            <div class="hero-meta"><span>Last update</span><b id="lastUpdate">—</b></div>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card"><span>Daily Logs</span><strong id="statProgress">0</strong><small>research entries</small></div>
+          <div class="stat-card"><span>Lecture Notes</span><strong id="statNotes">0</strong><small>knowledge records</small></div>
+          <div class="stat-card"><span>Papers</span><strong id="statPapers">0</strong><small>research outputs</small></div>
+          <div class="stat-card"><span>Activities</span><strong id="statActivities">0</strong><small>academic activities</small></div>
+        </div>
+
+        <div class="two-col">
+          <article class="panel">
+            <div class="panel-head"><div><p class="eyebrow">RECENT</p><h2>Research Progress</h2></div><a href="#progress">See all →</a></div>
+            <div id="recentProgress" class="feed"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-head"><div><p class="eyebrow">FOCUS</p><h2>Research Scope</h2></div><a href="#scope">Explore →</a></div>
+            <div id="scopePreview" class="scope-preview"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="progress" class="page">
+        <div class="page-heading">
+          <div><p class="eyebrow">RESEARCH JOURNAL</p><h1>Daily Progress</h1><p>Record what you did, what you learned, and what comes next.</p></div>
+          <button class="primary-btn" data-open-form="progress">+ New progress</button>
+        </div>
+        <div class="filter-row"><input id="progressSearch" class="search" placeholder="Search progress..."><select id="progressFilter"><option value="all">All tags</option><option value="theory">Theory</option><option value="coding">Coding</option><option value="simulation">Simulation</option><option value="writing">Writing</option><option value="reading">Reading</option></select></div>
+        <div id="progressList" class="card-list"></div>
+      </section>
+
+      <section id="notes" class="page">
+        <div class="page-heading">
+          <div><p class="eyebrow">KNOWLEDGE BASE</p><h1>Lecture Notes</h1><p>Keep concepts, derivations, equations, and references in one place.</p></div>
+          <button class="primary-btn" data-open-form="notes">+ New note</button>
+        </div>
+        <div id="notesList" class="card-grid"></div>
+      </section>
+
+      <section id="papers" class="page">
+        <div class="page-heading">
+          <div><p class="eyebrow">RESEARCH OUTPUT</p><h1>My Papers</h1><p>Track manuscripts from idea to publication.</p></div>
+          <button class="primary-btn" data-open-form="papers">+ Add paper</button>
+        </div>
+        <div id="papersList" class="paper-list"></div>
+      </section>
+
+      <section id="scope" class="page">
+        <div class="page-heading">
+          <div><p class="eyebrow">SCIENTIFIC MAP</p><h1>Research Scope</h1><p>Organize the questions, methods, materials, and directions that define your research.</p></div>
+          <button class="primary-btn" data-open-form="scope">+ Add scope</button>
+        </div>
+        <div id="scopeList" class="scope-grid"></div>
+      </section>
+
+      <section id="activity" class="page">
+        <div class="page-heading">
+          <div><p class="eyebrow">ACADEMIC LIFE</p><h1>Activities</h1><p>Conferences, teaching, seminars, collaborations, awards, and other milestones.</p></div>
+          <button class="primary-btn" data-open-form="activity">+ Add activity</button>
+        </div>
+        <div id="activityList" class="timeline"></div>
+      </section>
+
+      <footer class="footer">Academic Research Hub · Built for GitHub Pages · <span id="year"></span></footer>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <button id="closeModal" class="modal-close">×</button>
+      <p class="eyebrow" id="formEyebrow">NEW ENTRY</p>
+      <h2 id="formTitle">Add entry</h2>
+      <form id="entryForm">
+        <input type="hidden" id="entryType">
+        <label>Title<input id="title" required></label>
+        <label>Date<input id="date" type="date"></label>
+        <label id="tagLabel">Category<select id="tag"><option>Theory</option><option>Coding</option><option>Simulation</option><option>Writing</option><option>Reading</option><option>Teaching</option><option>Conference</option><option>Publication</option></select></label>
+        <label>Description / Notes<textarea id="description" rows="7" required></textarea></label>
+        <label id="linkLabel">Link (optional)<input id="link" type="url" placeholder="https://..."></label>
+        <button class="primary-btn full" type="submit">Save entry</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
