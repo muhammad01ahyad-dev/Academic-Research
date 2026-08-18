@@ -26,6 +26,7 @@
         <a href="#progress" class="nav-link" data-page="progress">◷ <span>Daily Progress</span></a>
         <a href="#notes" class="nav-link" data-page="notes">✎ <span>Lecture Notes</span></a>
         <a href="#papers" class="nav-link" data-page="papers">▤ <span>My Papers</span></a>
+        <a href="#computation" class="nav-link" data-page="computation">▦ <span>Computation</span></a>
         <a href="#scope" class="nav-link" data-page="scope">◇ <span>Research Scope</span></a>
         <a href="#activity" class="nav-link" data-page="activity">↗ <span>Activities</span></a>
       </nav>
@@ -69,6 +70,7 @@
           <div class="stat-card"><span>Daily Logs</span><strong id="statProgress">0</strong><small>research entries</small></div>
           <div class="stat-card"><span>Lecture Notes</span><strong id="statNotes">0</strong><small>knowledge records</small></div>
           <div class="stat-card"><span>Papers</span><strong id="statPapers">0</strong><small>research outputs</small></div>
+          <div class="stat-card"><span>Computations</span><strong id="statComputation">0</strong><small>simulation results</small></div>
           <div class="stat-card"><span>Activities</span><strong id="statActivities">0</strong><small>academic activities</small></div>
         </div>
 
@@ -109,6 +111,14 @@
         <div id="papersList" class="paper-list"></div>
       </section>
 
+      <section id="computation" class="page">
+        <div class="page-heading">
+          <div><p class="eyebrow">SIMULATION &amp; NUMERICAL RESULTS</p><h1>Computation</h1><p>Numerical results, simulations, and visualizations — plots (PNG) and animations (GIF) generated from your computational work.</p></div>
+          <button class="primary-btn" data-open-form="computation">+ Add computation result</button>
+        </div>
+        <div id="computationList" class="computation-grid"></div>
+      </section>
+
       <section id="scope" class="page">
         <div class="page-heading">
           <div><p class="eyebrow">SCIENTIFIC MAP</p><h1>Research Scope</h1><p>Organize the questions, methods, materials, and directions that define your research.</p></div>
@@ -140,6 +150,7 @@
         <label>Date<input id="date" type="date"></label>
         <label id="tagLabel">Category<select id="tag"><option>Theory</option><option>Coding</option><option>Simulation</option><option>Writing</option><option>Reading</option><option>Teaching</option><option>Conference</option><option>Publication</option></select></label>
         <label>Description / Notes<textarea id="description" rows="7" required></textarea></label>
+        <label id="mediaLabel" class="hidden-field">Image / GIF path or URL (optional)<input id="media" type="text" placeholder="assets/media/your-result.png or .gif"></label>
         <label id="linkLabel">Link (optional)<input id="link" type="url" placeholder="https://..."></label>
         <button class="primary-btn full" type="submit">Save entry</button>
       </form>
