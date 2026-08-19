@@ -160,3 +160,65 @@
   <script src="assets/js/app.js"></script>
 </body>
 </html>
+<label id="mediaLabel" class="hidden-field">
+  Upload computation file
+
+  <input
+    id="media"
+    type="file"
+    accept=".png,.jpg,.jpeg,.gif,.svg,.webp,.pdf,.mp4,.webm,.py,.ipynb,.txt,.csv,.json,.zip"
+  >
+
+  <small>
+    Maximum 10 MB.
+    Supported: PNG, JPG, GIF, SVG, WEBP, PDF, MP4, WEBM,
+    PY, IPYNB, TXT, CSV, JSON, ZIP.
+  </small>
+</label>
+
+<div id="uploadPreview" class="upload-preview"></div>
+
+<div id="uploadMetadata" class="upload-metadata"></div>
+<div id="computationMetadata" class="computation-metadata">
+
+  <label>
+    Software
+    <input
+      id="software"
+      type="text"
+      placeholder="Python / Mathematica / QE / Yambo / OpenMX">
+  </label>
+
+  <label>
+    Method
+    <input
+      id="method"
+      type="text"
+      placeholder="MBHM / Tight-Binding / DFT / Wannier90">
+    </label>
+
+  <label>
+    Material
+    <input
+      id="material"
+      type="text"
+      placeholder="GaAs / Si / Graphene / Weyl semimetal">
+  </label>
+
+  <label>
+    Observable
+    <input
+      id="observable"
+      type="text"
+      placeholder="χ(2) / σxx / σxy / Berry curvature">
+  </label>
+
+  <label>
+    Computation notes
+    <textarea
+      id="metadataNotes"
+      rows="4"
+      placeholder="Parameters, convergence, k-grid, comments, etc."></textarea>
+  </label>
+
+</div>
