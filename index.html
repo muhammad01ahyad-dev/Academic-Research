@@ -1065,8 +1065,21 @@
   overlay.addEventListener('click', function(ev){ if(ev.target === overlay) closeForm(); });
 
   // ================= INIT =================
+  async function seedDefaultPassword(){
+    try{
+      var res = await window.storage.get(AUTH_KEY, true);
+      var existing = res && res.value ? JSON.parse(res.value) : null;
+      if(!existing || !existing.password){
+        await window.storage.set(AUTH_KEY, JSON.stringify({password:'ahyad'}), true);
+      }
+    }catch(e){
+      try{ await window.storage.set(AUTH_KEY, JSON.stringify({password:'ahyad'}), true); }catch(e2){}
+    }
+  }
+
   async function init(){
     await initAuthHandlers();
+    await seedDefaultPassword();
     await Promise.all([loadProfile(), loadAllSections()]);
     showPublic();
   }
